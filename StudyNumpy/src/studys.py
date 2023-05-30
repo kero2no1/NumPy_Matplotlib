@@ -48,6 +48,22 @@ def exercise1():
     arr_1 = np.arange(1,13,2, dtype=np.int16 )
     print( arr_1[3:6] )
     print( arr_1[::-1] )
+    
+    arr_2 = np.array(
+        [[2,4,6],
+         [-1,5,-3],
+         [0,-2,3]])
+    
+    print( arr_2[:1,] )
+    print( arr_2[0] )
+    print( arr_2[2,0] )
+    print( arr_2[1:,1:])
+
+def exercise2():
+    pass
+
+def exercise3():
+    pass
 
 
 def main():
