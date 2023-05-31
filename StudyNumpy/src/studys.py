@@ -59,6 +59,11 @@ def exercise1():
     print( arr_2[2,0] )
     print( arr_2[1:,1:])
 
+    # 等間隔に分割する、第三引数未指定の場合は50分割
+    arr_1 = np.linspace( 0,3*np.pi )
+    print( arr_1 )
+
+
 def exercise2():
     pass
 
