@@ -65,7 +65,51 @@ def exercise1():
 
 
 def exercise2():
-    pass
+    # 四則演算
+    arr_1 = np.array([[1,3],[-2,4]])
+    arr_2 = np.array([[2,-1],[3,0]])
+
+    # 足し算    
+    arr_3 = arr_1 + arr_2
+    print( arr_3 )
+
+    # 引き算
+    arr_3 = arr_1 - arr_2
+    print( arr_3 )
+
+    # かけ算(行列積)
+    arr_1 = np.array([[-2,-5],[1,3]])
+    arr_2 = np.array([[3,0],[6,2]])
+    arr_3 = arr_1 @ arr_2           # 方法①：@を使う
+    print( arr_3 )
+    print( arr_1.dot( arr_2 ) )     # 方法②：dotメソッドを使う
+    
+    # アダマール積(要素同士(同じ場所同士)のかけ算のこと)
+    arr_1 = np.array([[3,5],[4,-1]])
+    arr_2 = np.array([[-2,1],[0,-3]])
+    arr_3 = arr_1 * arr_2
+    print( arr_3 )
+    
+    
+    # 転置
+    arr_1 = np.array([[2,3,4]])     # 1次元ではなく2次元になるように定義する
+    arr_2 = np.array([[1.2,3.5,5.1],[-0.3,1.1,-4.5]])
+    print( arr_1 )
+    print( arr_1.T )    # ベクトルの転置はndarrayの作り方に注意
+    arr_1 = np.array([2,3,4])
+    print( arr_1.reshape(-1,1) )    # 無理やりreshape
+    print( arr_2 )
+    print( arr_2.T )
+
+    # 逆行列と行列式
+    arr_1 = np.array([[4,-2],[1,0]])
+    print( arr_1 )
+    print( np.linalg.det( arr_1 ) ) # linalgは線形代数、detはdeterminationで行列式のこと
+                                    # 行列式≠0 なので逆行列が存在する
+    arr_2 = np.linalg.inv( arr_1 )  # invはinverse
+    print( arr_2 )
+    print( arr_1.dot( arr_2 ) )     # 逆行列との行列積は単位行列になる
+
 
 def exercise3():
     pass
@@ -73,7 +117,8 @@ def exercise3():
 
 def main():
     
-    exercise1()
+    # exercise1()
+    exercise2()
     
     
 
