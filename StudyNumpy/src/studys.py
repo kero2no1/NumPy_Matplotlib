@@ -90,7 +90,6 @@ def exercise2():
     arr_3 = arr_1 * arr_2
     print( arr_3 )
     
-    
     # 転置
     arr_1 = np.array([[2,3,4]])     # 1次元ではなく2次元になるように定義する
     arr_2 = np.array([[1.2,3.5,5.1],[-0.3,1.1,-4.5]])
@@ -112,13 +111,35 @@ def exercise2():
 
 
 def exercise3():
-    pass
-
+    # 行列にスカラーをかける（ブロードキャストという）
+    arr_1 = np.array([[4,-2],[1,0]])
+    print( arr_1 * 0.5 )
+    arr_2 = np.array([[8,1,5],[-3,0,-7]])
+    print( arr_2 * 2 )
+    
+    # ベクトルのサイズ変更
+    arr_1 = np.arange(12)
+    print( arr_1 )
+    arr_2 = arr_1.reshape(3,4)
+    print( arr_2 )
+    
+    # 統計値
+    arr_1 = np.array([[2,4,6],[-1,5,-3],[0,-2,3]])
+    print( arr_1.max() )    # 各要素の最大(引数にaxis=を追加すると、列ごと行ごとの統計値を算出可能)
+    print( arr_1.min() )    # 各要素の最小
+    print( arr_1.sum() )    # 各要素の総和
+    print( arr_1.mean() )   # 各要素の平均
+    print( arr_1.var() )    # 各要素の分散
+    print( arr_1.std() )    # 各要素の標準偏差
+    
+    
+    
 
 def main():
     
     # exercise1()
-    exercise2()
+    # exercise2()
+    exercise3()
     
     
 
