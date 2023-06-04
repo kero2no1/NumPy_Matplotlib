@@ -70,16 +70,48 @@ def exercise5():
     plt.show()
 
 def exercise6():
-    pass
+    # 凡例を追加する
+    x = np.linspace(0,2*np.pi,500)
+    y1 = np.sin(x)
+    y2 = np.cos(x)
+    
+    plt.plot(x,y1,label="sin")
+    plt.plot(x,y2,label="cos")
+    
+    plt.ylim(-2,2)
+    # plt.legend()
+    plt.legend(loc=2)   # locで凡例表示位置を指定できる、これは左上(upper left)
+    plt.show()
+
+def exercise7():
+    # マーカーの種類とサイズの変更
+    x1 = np.random.randint(10,35,20)
+    x2 = np.random.randint(5,45,20)
+    x3 = np.random.randint(0,30,20)
+    y1 = np.random.randint(50,100,20)
+    y2 = np.random.randint(0,40,20)
+    y3 = np.random.randint(20,80,20)
+    
+    plt.scatter(x1,y1,marker="*",s=80)  # sでマーカーサイズを指定可能
+    plt.scatter(x2,y2,marker="^",s=60)
+    plt.scatter(x3,y3,marker="x",s=30)
+    
+    plt.show()
+    
 
 def main():
     # exercise1()
     # exercise2()
     # exercise3()
     # exercise4()
-    exercise5()
+    # exercise5()
     # exercise6()
-    # exercise7()
+    exercise7()
+    # exercise8()
+    # exercise9()
+    # exercise10()
+    # exercise11()
+    # exercise12()
 
 if __name__ == '__main__':
     main()
