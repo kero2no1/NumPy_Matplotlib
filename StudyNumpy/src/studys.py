@@ -5,6 +5,7 @@ Created on 2023/05/29
 '''
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 def exercise1():
     # ベクトル・行列の生成
@@ -166,7 +167,20 @@ def exercise5():
     print( np.hsplit( arr_3, 2 )[1] )
 
 def exercise6():
-    pass
+    x1 = np.linspace(0,2*np.pi,500)
+    x2 = np.random.randint(0,30,100)
+    y1 = np.sin(x1)
+    y2 = np.cos(x1)
+    
+    fig = plt.figure()
+    ax1 = fig.add_subplot( 2,1,1 )
+    ax2 = fig.add_subplot( 2,1,2 )
+    ax1.plot(x1,y1)
+    ax1.plot(x1,y2)
+    
+    ax2.hist( x2, bins=20 )
+    
+    plt.show()
     
 def exercise7():
     pass
@@ -178,8 +192,8 @@ def main():
     # exercise2()
     # exercise3()
     # exercise4()
-    exercise5()
-    # exercise6()
+    # exercise5()
+    exercise6()
     # exercise7()
     
     
