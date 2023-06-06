@@ -183,8 +183,25 @@ def exercise6():
     plt.show()
     
 def exercise7():
-    pass
-    
+    arr_1 = np.array([-10,-8,-6,-4,-2,0,2,4,6,8,10,12]).reshape(4,-1)
+    arr_2 = np.array([-1,-2,-2,-2,-2,-1,-2,-2,-2,-2,-1,-2]).reshape(3,-1)
+    print(arr_1.shape,arr_2.shape)
+
+    if arr_1.shape[1] == arr_2.shape[0]:
+        arr_3 = arr_1 @ arr_2
+        print( arr_3 )
+        
+        arr_4 = arr_3[:2,:2]
+        print( arr_4 )
+        print( np.linalg.det(arr_4.T))
+        print( np.linalg.inv(arr_4.T))
+        
+def exercise8():
+    arr_1 = np.random.randint(-100,100,300)
+    arr_2 = np.random.randint(-100,100,300)
+
+    plt.scatter(arr_1,arr_2)
+    plt.show()
 
 def main():
     
@@ -193,8 +210,9 @@ def main():
     # exercise3()
     # exercise4()
     # exercise5()
-    exercise6()
+    # exercise6()
     # exercise7()
+    exercise8()
     
     
 
