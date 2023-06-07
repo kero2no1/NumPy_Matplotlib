@@ -203,6 +203,9 @@ def exercise8():
     plt.scatter(arr_1,arr_2)
     plt.show()
 
+def exercise9():
+    pass
+
 def main():
     
     # exercise1()
@@ -212,7 +215,12 @@ def main():
     # exercise5()
     # exercise6()
     # exercise7()
-    exercise8()
+    # exercise8()
+    exercise9()
+    # exercise10()
+    # exercise11()
+    # exercise12()
+    
     
     
 
