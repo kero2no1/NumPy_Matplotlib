@@ -98,6 +98,34 @@ def exercise7():
     
     plt.show()
     
+def exercise8():
+    # 注釈を入れる
+    x = [5,3,4,2,0,3,2,1,4,6,8,5]
+    
+    plt.plot(x)
+    plt.annotate("min value", xy=(4.2,0), xytext=(9,1),arrowprops=dict(facecolor="black",shrink=0.05))
+    '''
+    第1引数：表示する注釈文          … min value
+    第2引数：矢印←の先頭座標        … x=4.2, y=0 のポイント
+    第3引数：注釈文の表示座標        … x=9, y= 1 のポイント
+    第4引数：←の色と長さ縮小率      … 黒色で長さ-5%
+    '''
+    
+    # 目盛りを調整する(指定する)
+    plt.xticks(np.arange(12))
+    plt.yticks(np.arange(0,10,2))
+    
+    # グリッド線の表示
+    plt.grid(True)
+    
+    plt.show()
+
+def exercise9():
+    pass
+
+def exercise10():
+    pass
+
 
 def main():
     # exercise1()
@@ -106,8 +134,8 @@ def main():
     # exercise4()
     # exercise5()
     # exercise6()
-    exercise7()
-    # exercise8()
+    # exercise7()
+    exercise8()
     # exercise9()
     # exercise10()
     # exercise11()
