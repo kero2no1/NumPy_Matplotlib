@@ -121,10 +121,29 @@ def exercise8():
     plt.show()
 
 def exercise9():
-    pass
+    # 複数のグラフを表示する
+    names = ["Sam","John","Kevin","Adam"]
+    values = [60,170,10,120]
+    
+    fig = plt.figure(figsize=(9,6))
+    ax1 = fig.add_subplot(1,3,1)
+    ax2 = fig.add_subplot(1,3,2)
+    ax3 = fig.add_subplot(1,3,3)
+    
+    ax1.bar(names,values)
+    ax2.scatter(names,values)
+    ax3.plot(names,values)
+    
+    plt.show()
 
 def exercise10():
-    pass
+    # ヒートマップとカラーバー
+    data = np.random.rand(10,10)
+    
+    plt.imshow(data,vmin=0,vmax=1,cmap="Blues")
+    plt.colorbar()
+    
+    plt.show()
 
 
 def main():
@@ -135,9 +154,9 @@ def main():
     # exercise5()
     # exercise6()
     # exercise7()
-    exercise8()
+    # exercise8()
     # exercise9()
-    # exercise10()
+    exercise10()
     # exercise11()
     # exercise12()
 
