@@ -4,7 +4,8 @@ Created on 2023/06/02
 @author: Keroichi.T
 '''
 
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
+import japanize_matplotlib
 import numpy as np
 
 
@@ -104,6 +105,7 @@ def exercise8():
     
     plt.plot(x)
     plt.annotate("min value", xy=(4.2,0), xytext=(9,1),arrowprops=dict(facecolor="black",shrink=0.05))
+    
     '''
     第1引数：表示する注釈文          … min value
     第2引数：矢印←の先頭座標        … x=4.2, y=0 のポイント
@@ -145,6 +147,29 @@ def exercise10():
     
     plt.show()
 
+def exercise11():
+    
+    plt.rcParams["font.size"] = 14
+    fig,ax = plt.subplots()
+    
+    ax.plot(["月","火","水","木","金","土","日"],[19,22,24,21,20,22,20],
+            label="最高気温",marker="o",color="r")
+    ax.plot(["月","火","水","木","金","土","日"],[10,13,12,12,10,11,12],
+            label="最低気温",marker="^",color="b")
+    
+    ax.set_xlabel("曜日")
+    ax.set_ylabel("気温",rotation="horizontal")
+    # ax.set_ylabel("気温",rotation="vertical")
+    
+    ax.set_yticks([0,5,10,15,20,25])
+
+    
+    ax.set_title("東京 10月1週目")
+    ax.grid(True)
+    
+    ax.legend()
+
+    plt.show()
 
 def main():
     # exercise1()
@@ -156,8 +181,8 @@ def main():
     # exercise7()
     # exercise8()
     # exercise9()
-    exercise10()
-    # exercise11()
+    # exercise10()
+    exercise11()
     # exercise12()
 
 if __name__ == '__main__':
