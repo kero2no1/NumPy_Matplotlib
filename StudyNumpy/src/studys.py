@@ -204,7 +204,15 @@ def exercise8():
     plt.show()
 
 def exercise9():
-    pass
+    arr_1 = np.zeros([3,3])
+    print( arr_1.shape, arr_1 )
+    arr_2 = np.array([2,3,4])
+    print( arr_2.shape, arr_2 )
+    arr_3 = np.array([2,3,4]).reshape(3,-1)
+    print( arr_3.shape, arr_3 )
+
+    print(arr_1+arr_2)
+    print(arr_1+arr_3)
 
 def main():
     
