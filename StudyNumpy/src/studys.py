@@ -204,15 +204,41 @@ def exercise8():
     plt.show()
 
 def exercise9():
+    # 3x3の行列(ゼロ)
     arr_1 = np.zeros([3,3])
     print( arr_1.shape, arr_1 )
+
+    # 1x3の行列
     arr_2 = np.array([2,3,4])
     print( arr_2.shape, arr_2 )
+
+    # 3x1の行列
     arr_3 = np.array([2,3,4]).reshape(3,-1)
     print( arr_3.shape, arr_3 )
 
+    # 3x3に1x3をブロードキャストで足し算→全行に足される
     print(arr_1+arr_2)
+    
+    # 3x3に3x1をブロードキャストで足し算→全列に足される
     print(arr_1+arr_3)
+
+def exercise10():
+    arr = np.arange(10)
+    print(arr[-1], arr[2:4], arr[2:])
+    
+    arr = np.arange(10).reshape(2,5)
+    print(arr[0,0])
+    print(arr[:,1])
+    print(arr[0,:])
+    
+    arr = np.arange(100).reshape(10,10)
+    print(arr[2:4,:])
+    print(arr[2:4,0:5])
+    print(arr[[4,2,0],:])   # 5,3,1行目の順に出力
+    
+    arr = np.arange(10)
+    arr[:] = 99
+    print(arr)
 
 def main():
     
@@ -224,8 +250,8 @@ def main():
     # exercise6()
     # exercise7()
     # exercise8()
-    exercise9()
-    # exercise10()
+    # exercise9()
+    exercise10()
     # exercise11()
     # exercise12()
     
