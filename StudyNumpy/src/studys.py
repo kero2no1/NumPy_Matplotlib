@@ -237,8 +237,22 @@ def exercise10():
     print(arr[[4,2,0],:])   # 5,3,1行目の順に出力
     
     arr = np.arange(10)
-    arr[:] = 99
+    arr[:] = 99             # スライスを利用して代入するとすべての値を変更できる
     print(arr)
+    
+def exercise11():
+    arr = np.arange(10).reshape(2,5)
+    print(arr>3)            # 各要素に対して判定した結果の配列を得る
+    print(arr[arr>3])       # arrayのインデックスにbool値を渡す→boolインデックス参照という
+    print(arr[arr==5])      # →arr[条件式]の構造
+    
+    arr = np.arange(20).reshape(4,5)
+    print(np.where(arr > 10,1,-1))  # np.where(条件式[,x,y]) Trueの場合はx、Falseの場合はy 3項演算子みたい
+    
+    arr = np.array([1,2,3,3,2,1])
+    print(np.unique(arr))   # 重複値を取り除く
+    
+    
 
 def main():
     
@@ -251,8 +265,8 @@ def main():
     # exercise7()
     # exercise8()
     # exercise9()
-    exercise10()
-    # exercise11()
+    # exercise10()
+    exercise11()
     # exercise12()
     
     
