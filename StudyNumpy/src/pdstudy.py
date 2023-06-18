@@ -10,7 +10,26 @@ def studyfunc01():
     df = pd.read_csv("../dataset/weather.csv")
     print(df.head(3))   # 先頭から引数を指定した行だけ表示
     print(df.tail(10))  # 末尾から引数を指定した行だけ表示
-
+    
+    print(df.columns)
+    
+    # 指定したカラムだけを抽出する
+    df = df[['年月日', '平均気温(℃)', '最高気温(℃)', '最低気温(℃)', '降水量の合計(mm)',
+       '最深積雪(cm)', '平均雲量(10分比)', '平均蒸気圧(hPa)',
+       '平均風速(m/s)', '日照時間(時間)']][1:]
+    print(df)
+    
+    print(df.dtypes)    # データの型
+    print(df.shape)     # データフレームのサイズ
+    print(df.columns)   # 列名の取得
+    print(df.index)     # 行名の取得
+    
+    # 任意の要素を取得(要素番号で指定する方法)
+    print(df.iloc[4:10,2:6])    # 5行目から10行目(要素4~9)、3列目から6列目(要素2~5)
+    
+    # 任意の要素を取得(名前で指定する方法)
+    print(df.loc[5:10,'最高気温(℃)':'最深積雪(cm)'])
+    
 
 def main():
     studyfunc01()    
