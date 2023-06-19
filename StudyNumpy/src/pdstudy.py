@@ -30,11 +30,40 @@ def studyfunc01():
     # 任意の要素を取得(名前で指定する方法)
     print(df.loc[5:10,'最高気温(℃)':'最深積雪(cm)'])
     
+    
+def studyfunc02():
+    df_people = pd.read_csv("../dataset/people.csv")
+    print(df_people)
+
+
+def studyfunc03():
+    # pandas Series型の基本
+    s = [50,60,70,80,90]
+    sr = pd.Series(s)
+    print(sr, type(sr), sr.dtype, sr.size, len(sr))
+    
+    # インデックスの設定
+    print(sr.index)
+    sr.index=["a","b","c","d","e"]
+    print(sr)
+    print(sr.index)
+    
+    # インデックスの貼り直し。drop＝Trueでindexを削除。
+    sr.reset_index(drop=True,inplace=True)
+    print(sr)
+    
+    # インデックスを指定して削除やデータの変更
+    sr.drop(0,inplace=True)
+    print(sr)
+    sr[1] = "6"
+    print(sr)
+    
+    
 
 def main():
-    studyfunc01()    
+    # studyfunc01()    
     # studyfunc02()    
-    # studyfunc03()    
+    studyfunc03()    
     # studyfunc04()    
     # studyfunc05()    
 
