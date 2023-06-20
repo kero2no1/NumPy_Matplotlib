@@ -32,9 +32,24 @@ def studyfunc01():
     
     
 def studyfunc02():
+    # 条件抽出あれこれ
     df_people = pd.read_csv("../dataset/people.csv")
     print(df_people)
+    
+    # メソッドを使わない方法
+    print(df_people[df_people["nationality"] == "America"])
 
+    # メソッドを使う方法
+    print(df_people.query("nationality == 'America'"))
+    print(df_people[df_people["nationality"].isin(["America"])])
+    
+    # 複合条件
+    print(df_people[(df_people["age"] >= 20) & (df_people["age"] < 30)])
+    print(df_people.query("age >= 20 & age < 30"))
+    
+    # ユニークな値の抽出(DataFrameではなくSeriesに対して使える)
+    print(df_people["nationality"].unique())
+    
 
 def studyfunc03():
     # pandas Series型の基本
@@ -62,8 +77,8 @@ def studyfunc03():
 
 def main():
     # studyfunc01()    
-    # studyfunc02()    
-    studyfunc03()    
+    studyfunc02()    
+    # studyfunc03()    
     # studyfunc04()    
     # studyfunc05()    
 
