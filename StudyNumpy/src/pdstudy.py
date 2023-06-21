@@ -50,8 +50,35 @@ def studyfunc02():
     # ユニークな値の抽出(DataFrameではなくSeriesに対して使える)
     print(df_people["nationality"].unique())
     
+    # 重複除去
+    print(df_people.drop_duplicates())  # 全カラムで一致している行の削除
+    print(df_people.drop_duplicates(subset="nationality"))
+    
+    
 
 def studyfunc03():
+    # カラム名の変更
+    df = pd.read_csv("../dataset/weather.csv")
+    print(df.head(3))
+    df = df[['年月日', '平均気温(℃)', '最高気温(℃)', '最低気温(℃)', '降水量の合計(mm)',
+       '最深積雪(cm)', '平均雲量(10分比)', '平均蒸気圧(hPa)',
+       '平均風速(m/s)', '日照時間(時間)']][1:]
+    print(df.head(3))
+    print(df.columns)
+    
+    # まとめて変更
+    df.columns = ['年月日', '平均気温', '最高気温', '最低気温', '降水量の合計', '最深積雪',
+       '平均雲量', '平均蒸気圧', '平均風速', '日照時間']
+    print(df.columns)
+    
+    # カラムを指定して変更
+    df = df.rename(columns={"平均気温":"平均"})
+    print(df.columns)
+    
+    # 並べ替え
+    print(df.sort_values("最高気温",ascending=False))   # 降順
+
+def studyfunc04():
     # pandas Series型の基本
     s = [50,60,70,80,90]
     sr = pd.Series(s)
@@ -73,12 +100,11 @@ def studyfunc03():
     sr[1] = "6"
     print(sr)
     
-    
 
 def main():
     # studyfunc01()    
-    studyfunc02()    
-    # studyfunc03()    
+    # studyfunc02()    
+    studyfunc03()    
     # studyfunc04()    
     # studyfunc05()    
 
