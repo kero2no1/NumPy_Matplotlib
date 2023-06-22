@@ -77,8 +77,20 @@ def studyfunc03():
     
     # 並べ替え
     print(df.sort_values("最高気温",ascending=False))   # 降順
+    print(df.sort_values("最高気温",ascending=True))   # 昇順
 
 def studyfunc04():
+    # ダミー変数化
+    df_people = pd.read_csv("../dataset/people.csv")
+    print(df_people["nationality"].unique())
+
+    print(pd.get_dummies(df_people, columns=["nationality"]))
+    
+
+
+
+    
+def studyfunc05():
     # pandas Series型の基本
     s = [50,60,70,80,90]
     sr = pd.Series(s)
@@ -104,8 +116,8 @@ def studyfunc04():
 def main():
     # studyfunc01()    
     # studyfunc02()    
-    studyfunc03()    
-    # studyfunc04()    
+    # studyfunc03()    
+    studyfunc04()    
     # studyfunc05()    
 
 if __name__ == '__main__':
