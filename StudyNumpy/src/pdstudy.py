@@ -54,6 +54,12 @@ def studyfunc02():
     print(df_people.drop_duplicates())  # 全カラムで一致している行の削除
     print(df_people.drop_duplicates(subset="nationality"))
     
+    # ダミー変数化
+    df_people = pd.read_csv("../dataset/people.csv")
+    print(df_people["nationality"].unique())
+
+    df_people = pd.get_dummies(df_people, columns=["nationality"])
+    print(df_people)
     
 
 def studyfunc03():
@@ -80,14 +86,29 @@ def studyfunc03():
     print(df.sort_values("最高気温",ascending=True))   # 昇順
 
 def studyfunc04():
-    # ダミー変数化
-    df_people = pd.read_csv("../dataset/people.csv")
-    print(df_people["nationality"].unique())
-
-    print(pd.get_dummies(df_people, columns=["nationality"]))
+    # 欠損値の扱い
+    df = pd.read_csv("../dataset/weather.csv")
+    print(df.head(3))
+    df = df[['年月日', '平均気温(℃)', '最高気温(℃)', '最低気温(℃)', '降水量の合計(mm)',
+       '最深積雪(cm)', '平均雲量(10分比)', '平均蒸気圧(hPa)',
+       '平均風速(m/s)', '日照時間(時間)']][1:]
+    print(df.head(3))
+    print(df.columns)
     
+    # まとめて変更
+    df.columns = ['年月日', '平均気温', '最高気温', '最低気温', '降水量の合計', '最深積雪',
+       '平均雲量', '平均蒸気圧', '平均風速', '日照時間']
+    print(df.columns)
 
+    # 欠損値の確認
+    print(df.isnull())
+    print(df.isnull().sum())
 
+    # 欠損値の補完
+    print(df.fillna(0).head())
+    
+    # 欠損値の削除(列方向)
+    print(df.dropna(axis=1).head())
 
     
 def studyfunc05():
