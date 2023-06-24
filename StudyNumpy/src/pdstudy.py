@@ -112,6 +112,17 @@ def studyfunc04():
 
     
 def studyfunc05():
+    # ユニークな値の出現回数
+    df_iris = pd.read_csv("../dataset/iris.csv")
+    print(df_iris.head())
+    
+    print(df_iris["Class"].value_counts())  # 列に対してユニークな値の出現回数をカウント
+    
+    # グループ毎の集計
+    print(df_iris.groupby("Class").mean())
+
+
+def studyfunc06():    
     # pandas Series型の基本
     s = [50,60,70,80,90]
     sr = pd.Series(s)
@@ -138,8 +149,10 @@ def main():
     # studyfunc01()    
     # studyfunc02()    
     # studyfunc03()    
-    studyfunc04()    
-    # studyfunc05()    
+    # studyfunc04()    
+    studyfunc05()    
+    # studyfunc06()    
+    
 
 if __name__ == '__main__':
     main()
