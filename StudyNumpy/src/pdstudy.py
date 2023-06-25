@@ -120,6 +120,10 @@ def studyfunc05():
     
     # グループ毎の集計
     print(df_iris.groupby("Class").mean())
+    
+    # 統計量一式
+    print(df_iris.describe())
+    
 
 
 def studyfunc06():    
