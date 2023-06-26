@@ -148,14 +148,24 @@ def studyfunc06():
     sr[1] = "6"
     print(sr)
     
+    # 辞書型データでもSeries型の作成が可能、keyがindexでvalueが値
+    d = {"a":50,"b":60,"c":70,"d":80,"e":90}
+    sr = pd.Series(d)
+    print(sr)
+    print(sr.values, type(sr.values), sr["a"], sr[0])   # numpy型で取得できる
+    print(sr["b":"d"])
+    print(sr[1:4])
+    print(sr[::-1])     #逆順出力、スライスと同じ考え方
+    
+    
 
 def main():
     # studyfunc01()    
     # studyfunc02()    
     # studyfunc03()    
     # studyfunc04()    
-    studyfunc05()    
-    # studyfunc06()    
+    # studyfunc05()    
+    studyfunc06()    
     
 
 if __name__ == '__main__':
