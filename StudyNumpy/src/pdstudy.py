@@ -156,7 +156,18 @@ def studyfunc06():
     print(sr["b":"d"])
     print(sr[1:4])
     print(sr[::-1])     #逆順出力、スライスと同じ考え方
+    print(sr[[1,3]])
+    print(sr[["a","c"]])
     
+    print(list(sr))     # Series型からlist型への変更
+    print(tuple(sr))    # Series型からtuple型への変更
+    
+    print(sr[sr == 50])
+    
+    # applyメソッドを使うと、各要素に関数などを適用することができる
+    sr_str = sr.apply(str)  # 各要素にstr(n)を適用している
+    print(sr_str)
+    print(sr_str.str[0:1])
     
 
 def main():
