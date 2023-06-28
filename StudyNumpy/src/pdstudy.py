@@ -169,6 +169,10 @@ def studyfunc06():
     print(sr_str)
     print(sr_str.str[0:1])
     
+    print(sr_str.str.contains("7")) # 要素が特定の文字列を含むとTrueになる
+    print(sr_str[sr_str.str.contains("7")]) # Trueになったものを抽出する
+    print(sr_str[sr_str.str.contains("\d")]) # 正規表現で抽出 
+    
 
 def main():
     # studyfunc01()    
