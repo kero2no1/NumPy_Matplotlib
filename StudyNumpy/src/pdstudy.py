@@ -5,6 +5,7 @@ Created on 2023/06/15
 '''
 
 import pandas as pd
+from pickle import FALSE
 
 def studyfunc01():
     df = pd.read_csv("../dataset/weather.csv")
@@ -171,7 +172,20 @@ def studyfunc06():
     
     print(sr_str.str.contains("7")) # 要素が特定の文字列を含むとTrueになる
     print(sr_str[sr_str.str.contains("7")]) # Trueになったものを抽出する
+    
     print(sr_str[sr_str.str.contains("\d")]) # 正規表現で抽出 
+    test = pd.Series([50,60,"田中",80,90,"鈴木"])
+    print(test.str.contains("田中",regex=False))  # 数値型はNaN(欠損値)に置き換えられる
+    print(test.str.contains("田中",na=False,regex=False))  # 欠損値をfalseに変換
+    print(test[test.str.contains("田中",na=False,regex=False)])   # Trueだけ抽出
+    print(test[~test.str.contains("田中",na=False,regex=False)])  # 反転
+    
+
+def studyfunc07():
+    sr = pd.Series(["田中","山田","鈴木","田中"])
+    print(sr.unique)
+    print(sr.value_counts())
+    
     
 
 def main():
@@ -180,7 +194,10 @@ def main():
     # studyfunc03()    
     # studyfunc04()    
     # studyfunc05()    
-    studyfunc06()    
+    # studyfunc06()    
+    studyfunc07()    
+    # studyfunc08()    
+    # studyfunc09()    
     
 
 if __name__ == '__main__':
