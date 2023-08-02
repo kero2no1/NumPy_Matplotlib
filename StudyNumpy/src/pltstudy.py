@@ -171,6 +171,24 @@ def exercise11():
 
     plt.show()
 
+def exercise12():
+    # データ生成
+    x = np.linspace(1,20,100)
+    y1 = x[10:]
+    y2 = np.log2(x[10:])
+    y3 = np.ones_like(x[10:])
+    
+    
+    # グラフ描画
+    plt.figure(figsize=(4,3))
+    plt.plot(x[10:], y1, label="線形探索")
+    plt.plot(x[10:], y2, linestyle="--", label="2分探索")
+    plt.plot(x[10:], y3,linestyle=":", label="ハッシュ表探索")
+    plt.legend()
+    plt.grid(True)
+    plt.tick_params(labelleft=False,labelbottom=False)
+    plt.show()
+
 def main():
     # exercise1()
     # exercise2()
@@ -182,8 +200,8 @@ def main():
     # exercise8()
     # exercise9()
     # exercise10()
-    exercise11()
-    # exercise12()
+    # exercise11()
+    exercise12()
 
 if __name__ == '__main__':
     main()
