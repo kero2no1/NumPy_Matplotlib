@@ -173,17 +173,29 @@ def exercise11():
 
 def exercise12():
     # データ生成
-    x = np.linspace(1,20,100)
-    y1 = x[10:]
-    y2 = np.log2(x[10:])
-    y3 = np.ones_like(x[10:])
+    x = np.linspace(1,100,400)
+
+    # データ生成(探索アルゴリズムの計算量)
+    # y1 = x[10:]
+    # y2 = np.log2(x[10:])
+    # y3 = np.ones_like(x[10:])
+
+    # データ生成(整列アルゴリズムの計算量)
+    y1 = x**2
+    y2 = x**1.5
+    y3 = x * np.log2(x)
     
-    
-    # グラフ描画
     plt.figure(figsize=(4,3))
-    plt.plot(x[10:], y1, label="線形探索")
-    plt.plot(x[10:], y2, linestyle="--", label="2分探索")
-    plt.plot(x[10:], y3,linestyle=":", label="ハッシュ表探索")
+    # グラフ描画(探索アルゴリズムの計算量)
+    # plt.plot(x[10:], y1, label="線形探索")
+    # plt.plot(x[10:], y2, linestyle="--", label="2分探索")
+    # plt.plot(x[10:], y3,linestyle=":", label="ハッシュ表探索")
+    
+    # グラフ描画(整列アルゴリズムの計算量)
+    plt.plot(x, y1, label="基本の整列法")
+    # plt.plot(x, y2, linestyle="--", label="シェルソート")
+    plt.plot(x, y3,linestyle=":", label="高速な整列法")
+
     plt.legend()
     plt.grid(True)
     plt.tick_params(labelleft=False,labelbottom=False)
